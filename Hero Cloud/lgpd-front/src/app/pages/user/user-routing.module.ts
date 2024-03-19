@@ -6,11 +6,13 @@ import {UserListComponent} from "./user-list/user-list.component";
 //Alterar as rotas de vazio para users e de user para addUsers
 const routes: Routes = [
   {
-    path: 'users',
+    //path: 'users',
+    path: '',
     component: UserListComponent
   },
   {
-    path: 'addUsers',
+    //path: 'addUsers',
+    path: 'user',
     component: UserFormComponent
   }
 ];
