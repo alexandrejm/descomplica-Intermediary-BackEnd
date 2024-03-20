@@ -99,7 +99,7 @@ export class CourseService {
     private normalizeError(error: any) : ErrorResponse {
         console.log('Error: ', error)
         this.errorHandler.handleError(error);
-
+        // Se não houver erro conhecido, executa esse return abaixo?
         return ({
             id: "-1",
             code: "UnkownError",

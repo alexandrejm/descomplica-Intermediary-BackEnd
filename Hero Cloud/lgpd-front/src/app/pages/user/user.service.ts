@@ -8,7 +8,7 @@ export interface Params {
 
 export interface GetOptions {
   url: string;
-  params?: Params;
+  params?: Params; //? significa que é opcional
   data?: any;
 }
 
