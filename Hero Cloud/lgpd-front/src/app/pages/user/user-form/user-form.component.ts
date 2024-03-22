@@ -18,6 +18,7 @@ export const GENDERS = [
   styleUrls: ['./user-form.component.scss']
 })
 export class UserFormComponent {
+  // Incluído para trabalhar com envio de arquivos
   fileInput: File | null = null;
   fileSelected?: Blob;
   url: SafeResourceUrl | undefined;
@@ -79,7 +80,7 @@ export class UserFormComponent {
     private router: Router,
     private userService: UserService,
     private http: HttpClient,
-    private domSanitizer: DomSanitizer
+    private domSanitizer: DomSanitizer // Para trabalhar com envio de aquivos
   ) {
 
     this.route.queryParams.subscribe(async (params: any) => {
@@ -90,6 +91,7 @@ export class UserFormComponent {
           }
         });
         this.model = this.user;
+        //Incluído para trabalhar com arquivos
         this.getImage('http://localhost:3000/userImage/' + this.model.id).subscribe(x => this.url = x)
       } else {
         this.model = {}
@@ -97,6 +99,7 @@ export class UserFormComponent {
     });
   }
 
+  // Criado para trabalhar com envio de arquivos
   public getImage(url: string): Observable<SafeResourceUrl> {
     return this.http.get(url, { responseType: 'blob' }).pipe(
       map(
@@ -109,6 +112,7 @@ export class UserFormComponent {
 
   }
 
+  // Criado para trabalhar com envio de arquivos - vem do HTML
   onSelectNewFile(event: any): void {
     const target = event.target as HTMLInputElement
     this.fileSelected = (target.files as FileList)[0];

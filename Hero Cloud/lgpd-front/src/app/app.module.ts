@@ -14,7 +14,7 @@ import { SharedModule } from "./shared/shared.module";
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule //Habilita o envio de arquivos
   ],
   providers: [],
   bootstrap: [AppComponent]
